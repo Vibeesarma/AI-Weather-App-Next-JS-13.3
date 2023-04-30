@@ -5,6 +5,8 @@ import CalloutCard from "@/components/CalloutCard";
 import StatCard from "@/components/StatCard";
 import InformationPanel from "@/components/InformationPanel";
 import TempChart from "@/components/TempChart";
+import RainChart from "@/components/RainChart";
+import HumidityChart from "@/components/HumidityChart";
 
 type Props = {
   params: {
@@ -100,7 +102,9 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           {/* TempChart */}
           <TempChart results={results} />
           {/* RainChart */}
+          <RainChart results={results} />
           {/* HumidityChart */}
+          <HumidityChart results={results}/>
         </div>
       </div>
     </div>
