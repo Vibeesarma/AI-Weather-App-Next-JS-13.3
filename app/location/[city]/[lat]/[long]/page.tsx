@@ -8,6 +8,10 @@ import TempChart from "@/components/TempChart";
 import RainChart from "@/components/RainChart";
 import HumidityChart from "@/components/HumidityChart";
 
+
+// every one hour revalitate and refetch new data
+export const revalidate = 3600;
+
 type Props = {
   params: {
     city: string;
@@ -104,7 +108,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           {/* RainChart */}
           <RainChart results={results} />
           {/* HumidityChart */}
-          <HumidityChart results={results}/>
+          <HumidityChart results={results} />
         </div>
       </div>
     </div>
