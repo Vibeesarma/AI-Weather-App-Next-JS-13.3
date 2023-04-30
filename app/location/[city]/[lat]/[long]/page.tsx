@@ -1,4 +1,3 @@
-import React from "react";
 import { getClient } from "@/apollo-client";
 import fetchWeatherQuery from "@/graphql/queries/fetchWeatherQueries";
 import CalloutCard from "@/components/CalloutCard";
@@ -7,7 +6,8 @@ import InformationPanel from "@/components/InformationPanel";
 import TempChart from "@/components/TempChart";
 import RainChart from "@/components/RainChart";
 import HumidityChart from "@/components/HumidityChart";
-
+import getBasePath from "@/lib/getBasePath";
+import cleanData from "@/lib/cleanData";
 
 // every one hour revalitate and refetch new data
 export const revalidate = 3600;
@@ -35,6 +35,25 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   const results: Root = data.myQuery;
 
+  // chat open ai date
+
+  const dataToSend = cleanData(results, city);
+  // console.log("🚀 ~ file: page.tsx:42 ~ WeatherPage ~ dataToSend:", dataToSend)
+
+  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      weatherData: dataToSend,
+    }),
+  });
+
+  const GPTdata = await res.json();
+
+  const { content } = GPTdata;
+
   return (
     <div className=" flex flex-col min-h-screen md:flex-row">
       {/* information pannel */}
@@ -54,7 +73,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           <div className="m-2 mb-10">
             {/* CalloutCard GPT Data */}
 
-            <CalloutCard message="hello for GPT summary" />
+            <CalloutCard message={content} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
