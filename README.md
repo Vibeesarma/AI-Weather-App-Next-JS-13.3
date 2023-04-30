@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Weather App in Next.js 13.3
 
-## Getting Started
+![Screenshot 2023-04-30 085348](https://user-images.githubusercontent.com/77588716/235366770-30fde490-32d4-4169-8716-45c3f1bf6fef.jpg)
 
-First, run the development server:
+>This project get from [Sonny Sangha](https://www.youtube.com/@SonnySangha) YouTube channel
+
+>Project Link [Let’s Build an AI Weather App with ChatGPT-4 (Next.js 13.3, React, Tremor 2.0, StepZen, GraphQL)](https://www.youtube.com/watch?v=DS5TZCn-pk8&t=7807s)
+
+
+- Next.js 13 has so many new features one of the new ones useRouter in come from `"next/navigation" ` do not use next.js 12 router here it will affect the code.
+
+- also,use default ```loading.tsx``` file for loading.
+
+## Open-Meteo
+
+- [Open-Meteo](https://open-meteo.com/) gives you a free weather api.
+ 
+## StepZen
+
+- this middleware gives a connection between graphql so much easier.
+
+- In here you want to install [stepzen](https://stepzen.com/) to your terminal add globally
+  -this is the one you want to run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install -g stepzen
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   -  login your account it gives by stepzen guide
+   -  then copy the api from dashboard
+   -  after that run ```stepzen init``` in your root directory terminal it will create stepzen config file for you.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- go to your stepzen account and gets your RestAPI added command.
+  - this is a command `stepzen import curl` paste it your terminal.
+  - then it asked the endpoint to connect to your stepzen (MediaStack url)
+  - page the below URL to your terminal and accept another thing that they asked of you.
+    `http://api.mediastack.com/v1/news ? access_key = YOUR_ACCESS_KEY`
+  - also you can add some option parameter there if you add those to filter out the data
+  - after running the command on terminal to start stepzen `stepzen start`
+  - the above command also push the changes in graphql schema and also you can run stepzen in local using  this flag after stepzen start  command `--dashboard=local`
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+> Thanks for [Sonny Sangha](https://www.youtube.com/@SonnySangha)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
