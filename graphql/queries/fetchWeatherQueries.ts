@@ -51,7 +51,6 @@ const fetchWeatherQuery = gql`
       generationtime_ms
       hourly {
         apparent_temperature
-        dewpoint_2m
         precipitation
         precipitation_probability
         rain
@@ -63,11 +62,10 @@ const fetchWeatherQuery = gql`
         time
         uv_index
         uv_index_clear_sky
-        windspeed_10m
+        windgusts_10m
       }
       hourly_units {
         apparent_temperature
-        dewpoint_2m
         precipitation
         precipitation_probability
         rain
@@ -79,7 +77,7 @@ const fetchWeatherQuery = gql`
         time
         uv_index
         uv_index_clear_sky
-        windspeed_10m
+        windgusts_10m
       }
       latitude
       longitude

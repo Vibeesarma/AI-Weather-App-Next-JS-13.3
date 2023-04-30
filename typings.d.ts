@@ -1,7 +1,7 @@
 interface CurrentWeather {
   is_day: number;
   temperature: number;
-  time: number;
+  time: string;
   weathercode: number;
   winddirection: number;
   windspeed: number;
@@ -13,6 +13,7 @@ interface Daily {
   sunrise: [string];
   sunset: [string];
   temperature_2m_max: [number];
+  temperature_2m_min: [number];
   time: [string];
   uv_index_clear_sky_max: [number];
   uv_index_max: [number];
@@ -25,6 +26,7 @@ interface DailyUnits {
   sunrise: String;
   sunset: String;
   temperature_2m_max: String;
+  temperature_2m_min: String;
   time: String;
   uv_index_clear_sky_max: String;
   uv_index_max: String;
@@ -33,24 +35,22 @@ interface DailyUnits {
 
 interface Hourly {
   apparent_temperature: [number];
-  dewpoint_2m: [number];
   precipitation: [number];
   precipitation_probability: [number];
   rain: [number];
   relativehumidity_2m: [number];
   showers: [number];
-  snow_depth: [Int];
+  snow_depth: [number];
   snowfall: [number];
   temperature_2m: [number];
   time: [string];
   uv_index: [number];
   uv_index_clear_sky: [number];
-  windspeed_10m: [number];
+  windgusts_10m: [number];
 }
 
 interface HourlyUnits {
   apparent_temperature: String;
-  dewpoint_2m: String;
   precipitation: String;
   precipitation_probability: String;
   rain: String;
@@ -62,7 +62,7 @@ interface HourlyUnits {
   time: String;
   uv_index: String;
   uv_index_clear_sky: String;
-  windspeed_10m: String;
+  windgusts_10m: String;
 }
 
 interface Root {
