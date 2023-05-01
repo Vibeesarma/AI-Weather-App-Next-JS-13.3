@@ -49,7 +49,27 @@ const client = new ApolloClient({
 ## Open-Meteo
 
 - [Open-Meteo](https://open-meteo.com/) gives you a free weather API.
- 
+
+## CHAT GPT
+
+- (chat GPT)[https://platform.openai.com/docs/api-reference] use for get the summary of weather data.
+
+- you can use chat GPT 3.5 here.
+
+- you want to create an openai instance using below code,
+
+```typescript
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
+export default openai;
+
+```
+
+
 ## StepZen
 
 - this middleware gives a connection between graphql so much easier.
