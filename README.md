@@ -12,7 +12,7 @@
 - also,use default ```loading.tsx``` file for loading.
 
 
-## tremor
+## Tremor
 - [tremor](https://www.tremor.so/) gives you a component for create dashboard easily.
 
 - you can install using below commnad.
@@ -50,7 +50,7 @@ const client = new ApolloClient({
 
 - [Open-Meteo](https://open-meteo.com/) gives you a free weather API.
 
-## CHAT GPT
+## Chat GPT
 
 - [chat GPT](https://platform.openai.com/docs/api-reference) use for get the summary of weather data.
 
