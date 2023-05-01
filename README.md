@@ -52,7 +52,7 @@ const client = new ApolloClient({
 
 ## CHAT GPT
 
-- (chat GPT)[https://platform.openai.com/docs/api-reference] use for get the summary of weather data.
+- [chat GPT](https://platform.openai.com/docs/api-reference) use for get the summary of weather data.
 
 - you can use chat GPT 3.5 here.
 
