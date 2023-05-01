@@ -11,9 +11,44 @@
 
 - also,use default ```loading.tsx``` file for loading.
 
+
+## tremor
+- [tremor](https://www.tremor.so/) gives you a component for create dashboard easily.
+
+- you can install using below commnad.
+
+```bash
+npm install @tremor/react
+```
+- this library gives you some specific components like an Area chart bar chart line chart and donut chart-like things also components for show data etc.
+
+- it is only work on client-side in the next js 13 for now in the future it will give some more updates.
+
+
+## Apollo Client
+
+- [Apollo Client](https://www.apollographql.com/) is graphql developer platform.
+
+- this has cache management also and is one of the best graphQL clients.
+
+- you can install using below command
+
+```bash
+npm install @apollo/client graphql
+```
+
+- you want to create a client like a below,
+
+```typescript
+const client = new ApolloClient({
+  uri: 'https://flyby-router-demo.herokuapp.com/',
+  cache: new InMemoryCache(),
+});
+```
+
 ## Open-Meteo
 
-- [Open-Meteo](https://open-meteo.com/) gives you a free weather api.
+- [Open-Meteo](https://open-meteo.com/) gives you a free weather API.
  
 ## StepZen
 
